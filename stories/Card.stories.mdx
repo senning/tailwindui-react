@@ -1,0 +1,52 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import Card, { CardContent, CardHeader, CardFooter } from '../Components/Card';
+import Headline from '../Components/Headline';
+import Text from '../Components/Text';
+import Button from '../Components/Button';
+import Row from '../Components/Row';
+import '../assets/tailwind.min.css';
+
+import { ThemeProvider, ThemeDefault, ThemeReducer } from '../Components/Context';
+
+<Meta title="Components/Card" component={Card} />
+
+# Card
+
+A card, for content.
+
+<Preview>
+  <Story name="Card with Content">
+    <ThemeProvider>
+      <Card>
+        <CardContent>
+          Content
+        </CardContent>
+      </Card>
+    </ThemeProvider>
+  </Story>
+</Preview>
+
+## Card Header
+
+A header with a border
+
+<Preview>
+  <Story name="Card with Header and Footer">
+    <ThemeProvider>
+      <Card>
+        <CardHeader>
+          <Headline text="base">Header</Headline>
+        </CardHeader>        
+        <CardContent>
+          <Text mb="0">Content</Text>
+        </CardContent>
+        <CardFooter>
+          <Row>
+            <Text mb="0" textColor="gray-600">Footer</Text>
+            <Button>Cancel</Button>
+          </Row>
+        </CardFooter>
+      </Card>
+    </ThemeProvider>
+  </Story>
+</Preview>

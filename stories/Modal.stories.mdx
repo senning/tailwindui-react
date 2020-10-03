@@ -1,0 +1,42 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import Modal, { ModalCard, ModalCardContent } from '../Components/Modal';
+import Card, { CardContent, CardHeader, CardFooter } from '../Components/Card';
+import Headline from '../Components/Headline';
+import Text from '../Components/Text';
+import Button from '../Components/Button';
+import Row from '../Components/Row';
+import '../assets/tailwind.min.css';
+
+import { ThemeProvider, ThemeDefault, ThemeReducer } from '../Components/Context';
+
+<Meta title="Components/Modal" component={Modal} />
+
+# Modal
+
+An overlay with your content at the center.
+
+<Preview>
+  <Story name="Overlay with Card">
+    <ThemeProvider>
+      <Modal>
+        <ModalCard>
+          <CardHeader>
+            <Headline>Modal header</Headline>
+          </CardHeader>
+          <ModalCardContent>
+            <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Text>
+            <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Text>
+            <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Text>
+            <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Text>
+          </ModalCardContent>
+          <CardFooter>
+            <Row>
+              <Text mb="0" textColor="gray-600">Footer</Text>
+              <Button>Cancel</Button>
+            </Row>
+          </CardFooter>
+        </ModalCard>
+      </Modal>
+    </ThemeProvider>
+  </Story>
+</Preview>

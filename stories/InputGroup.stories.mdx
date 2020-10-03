@@ -1,0 +1,20 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import InputGroup from '../Components/InputGroup';
+import '../assets/tailwind.min.css';
+
+import { ThemeProvider, ThemeDefault, ThemeReducer } from '../Components/Context';
+
+<Meta title="Components/InputGroup" component={InputGroup} />
+
+# Input Group
+
+Inputs with labels, leading and trailing add-ons, and hints underneath. 
+
+<Preview>
+  <Story name="Card with Content">
+    <ThemeProvider>
+      <InputGroup
+        />
+    </ThemeProvider>
+  </Story>
+</Preview>

@@ -1,0 +1,73 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import Input from '../Components/Input';
+import InputGroup from '../Components/InputGroup';
+import '../assets/tailwind.min.css';
+
+import { ThemeProvider, ThemeDefault, ThemeReducer } from '../Components/Context';
+
+<Meta title="Components/Input" component={Input} />
+
+# Input
+
+A simple text input.
+
+<Preview>
+  <Story name="Input">
+    <ThemeProvider>
+      <Card>
+        <Input
+          placeholder="Placeholder"
+          />
+      </Card>
+    </ThemeProvider>
+  </Story>
+</Preview>
+
+# Styling
+
+<Preview>
+  <Story name="Styling">
+    <ThemeProvider>
+      <Card>
+        <Input
+          placeholder="Placeholder"
+          placeholderColor="orange-500"
+          textColor="orange-700"
+          borderColor="orange-700"
+          border="2"
+          />
+      </Card>
+    </ThemeProvider>
+  </Story>
+</Preview>
+
+# InputGroup
+
+<Preview>
+  <Story name="Group">
+    <ThemeProvider>
+      <Card>
+        <InputGroup
+          name="test"
+          label="Price"
+          placeholder="10.00"
+          pl="6"
+          before={(
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <span className="text-gray-500 sm:text-sm sm:leading-5">$</span>
+            </div>
+          )}
+          after={(
+            <div className="absolute inset-y-0 right-0 flex items-center">
+              <select aria-label="Currency" class="form-select h-full py-0 pl-2 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm sm:leading-5">
+                <option>USD</option>
+                <option>CAD</option>
+                <option>EUR</option>
+              </select>
+            </div>
+          )}
+          />
+      </Card>
+    </ThemeProvider>
+  </Story>
+</Preview>

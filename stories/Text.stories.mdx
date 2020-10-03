@@ -1,0 +1,66 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import Text from '../Components/Text';
+import '../assets/tailwind.min.css';
+
+import { ThemeProvider, ThemeDefault, ThemeReducer } from '../Components/Context';
+
+<Meta title="Components/Text" component={Text} />
+
+# Text
+
+Text, by default a paragraph
+
+<Preview>
+  <Story name="Paragraph">
+    <ThemeProvider>
+      <Text>Hello world</Text>
+    </ThemeProvider>
+  </Story>
+</Preview>
+
+## Span
+
+Use span, or any other element, in tagName to use that instead 
+
+<Preview>
+  <Story name="Span">
+    <ThemeProvider>
+      <Text tagName="span">Span</Text>
+    </ThemeProvider>
+  </Story>
+</Preview>
+
+
+## Typography classes
+
+You can use any of the typography props to style your text. For example:
+
+<Preview>
+  <Story name="Typography props">
+    <ThemeProvider>
+      <Text
+        font="mono"
+        fontSize="sm"
+        fontWeight="bold"
+        >Small, bold, monospace</Text>
+      <Text
+        textAlignment="right"
+        textColor="yellow-600"
+        decoration="underline"
+        maxW={false}
+        >Underlined, right-aligned, dark-yellow</Text>
+      <Text
+        textColor="gray-700"
+        >
+        <Text 
+          tagName="span"
+          textTransform="uppercase"
+          fontSize="sm"
+          fontWeight="extrabold"
+          textColor="gray-900"
+          >Smallcaps</Text>{" "}
+        start to a paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </Text>
+    </ThemeProvider>
+  </Story>
+</Preview>

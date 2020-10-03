@@ -1,0 +1,25 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import Headline from '../Components/Headline';
+import '../assets/tailwind.min.css';
+
+import { ThemeProvider, ThemeDefault, ThemeReducer } from '../Components/Context';
+
+<Meta title="Components/Headline" component={Headline} />
+
+# Headline
+
+Headlines, for heading content.
+
+<Preview>
+  <Story name="Headlines">
+    <ThemeProvider>
+      <Headline>H1</Headline>
+      <Headline level="1">H1</Headline>
+      <Headline level="2">H2</Headline>
+      <Headline level="3">H3</Headline>
+      <Headline level="4">H4</Headline>
+      <Headline level="5">H5</Headline>
+      <Headline level="6">H6</Headline>
+    </ThemeProvider>
+  </Story>
+</Preview>

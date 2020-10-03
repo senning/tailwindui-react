@@ -1,0 +1,75 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import Base from '../Components/Base';
+import '../assets/tailwind.min.css';
+
+import { ThemeProvider, ThemeDefault, ThemeReducer } from '../Components/Context';
+
+<Meta title="Components/Base" component={Base} />
+
+# Base
+
+The base component, elements with Tailwind classes from props
+
+<Preview>
+  <Story name="Base component">
+    <ThemeProvider>
+      <Base>
+        <p>Hello world</p>
+      </Base>
+    </ThemeProvider>
+  </Story>
+</Preview>
+
+
+# Display
+
+<Preview>
+  <Story name="Display">
+    <ThemeProvider>
+      <Base
+        display="block"
+        >
+        <p>Hello world</p>
+      </Base>
+    </ThemeProvider>
+  </Story>
+</Preview>
+
+# Background Colour
+
+Apply a background colour. You can use `background`, `backgroundColor`.
+
+
+<Preview>
+  <Story name="Background Colour">
+    <ThemeProvider>
+      <Base
+        backgroundColor="gray-200"
+        >
+        <p>Hello world</p>
+      </Base>
+    </ThemeProvider>
+  </Story>
+</Preview>
+
+# Responsive
+
+Apply a background colour. You can use `background`, `backgroundColor`.
+
+
+<Preview>
+  <Story name="Responsive">
+    <ThemeProvider>
+      <Base
+        backgroundColor={{
+          xs: "gray-200",
+          md: "gray-400",
+          lg: ["gradient-to-r"]
+        }}
+        gradientColorStops={["from-red-100", "to-red-400"]}
+        >
+        <p>Hello world</p>
+      </Base>
+    </ThemeProvider>
+  </Story>
+</Preview>

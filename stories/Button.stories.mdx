@@ -1,0 +1,118 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import Button from '../Components/Button';
+import '../assets/tailwind.min.css';
+
+import { ThemeProvider, ThemeDefault, ThemeReducer } from '../Components/Context';
+
+<Meta title="Components/Button" component={Button} />
+
+# Button
+
+A button, for actions.
+
+<Preview>
+  <Story name="Primary Button">
+    <ThemeProvider>
+      <Button>Button</Button>
+    </ThemeProvider>
+  </Story>
+</Preview>
+
+## Mode
+
+Buttons support a few modes, with styling defined in the theme. Mode is `primary` by default. 
+
+Since `mode` just controls colours in the default theme, **mode will be ignored if you set the `colour` prop**.
+
+You can add more modes in the theme. For example, to add an `alert` mode:
+
+```
+//In your (optional) theme file, /theme.js
+import { DefaultTheme } from 'tailwindui-react'
+let theme = DefaultTheme;
+theme.default.buttons.alert = ["bg-yellow-800", "text-yellow-100", ...]
+export theme;
+
+//In your project root (i.e. /App.js)
+import { ThemeProvider } from 'tailwindui-react';
+import theme from 'theme';
+
+<ThemeProvider initialState={theme}>
+  <Button mode="alert">
+</ThemeProvider>
+```
+
+<Preview>
+  <Story name="Button Mode">
+    <ThemeProvider>
+      <Button>Default (Primary)</Button>
+      <Button mode="primary">Primary</Button>
+      <Button mode="secondary">Secondary</Button>
+      <Button mode="warning">Warning</Button>
+      <Button mode="error">Error</Button>
+    </ThemeProvider>
+  </Story>
+</Preview>
+
+## Colour
+
+You can use any colour in your Tailwind theme in `colour`. By default, `Button` will use the 800 version as the background colour and the 100 version as the text colour. So if you use `colour="orange"`, the button will have the classes `bg-orange-800 text-orange-100`. You can flip this around with the `appearance` property. 
+
+<Preview>
+  <Story name="Button Colour">
+    <ThemeProvider>
+      <Button colour="orange">Orange</Button>
+      <Button colour="green">Green</Button>
+      <Button colour="teal">Teal</Button>
+      <Button colour="pink">Pink</Button>
+    </ThemeProvider>
+  </Story>
+</Preview>
+
+## Style
+
+Works with the Colour property. With `solid` (the default) the 800 version of the colour is used as the background and the 100 version is used as the text colour. `inverted` flips this, `outlined` adds a border to `invert` and `text` uses the 800 version of the colour for the text only.
+
+<Preview>
+  <Story name="Button Style">
+    <ThemeProvider>
+      <Button colour="orange">Default (solid)</Button>
+      <Button colour="orange" style="solid">Solid</Button>
+      <Button colour="orange" style="inverted">Inverted</Button>
+      <Button colour="orange" style="outlined">Outlined</Button>
+      <Button colour="orange" style="text">Text</Button>
+    </ThemeProvider>
+  </Story>
+</Preview>
+
+
+## Icon
+
+You can add icons to buttons. `icon` and `iconLeft` add the icon to the left. `iconTop`, `iconRight` and `iconBottom` add icons to the top, right and bottom respectively. This uses the Icon component, which supports XXXXXXXXXXX.
+
+For more control, you can also set `Icon` as a child of `Button`.
+
+<Preview>
+  <Story name="Button Icon">
+    <ThemeProvider>
+      <Button icon="alert">Alert</Button>
+      <Button iconTop="compass">Compass</Button>
+      <Button iconRight="compass">Compass</Button>
+      <Button iconBottom="compass">Compass</Button>
+      <Button iconLeft="alert">Alert</Button>
+    </ThemeProvider>
+  </Story>
+</Preview>
+
+## Classname
+
+You can add additional classes to the button as a string or array.
+
+<Preview>
+  <Story name="Button Classname">
+    <ThemeProvider>
+      <Button className="text-2xl">text-2xl</Button>
+      <Button className={["rounded-full", "px-10"]}>rounded-full, px-10</Button>
+    </ThemeProvider>
+  </Story>
+</Preview>
